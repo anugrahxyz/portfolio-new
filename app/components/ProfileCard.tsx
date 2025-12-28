@@ -11,20 +11,20 @@ export interface ProfileCardProps {
 export function ProfileCard({ profile, personas, nowElevated = false }: ProfileCardProps) {
   return (
     <section className="card p-8 mb-8 rounded shadow" style={{backgroundColor: "var(--card-bg)", border: `1px solid var(--card-border)`, boxShadow: `var(--card-shadow)`}}>
-      <div className="flex items-center mb-4">
+      <div className="flex flex-col md:flex-row items-center mb-4">
         <img
           src="/profile.png"
           alt="Profile Image"
           className="w-20 h-20 rounded-full mr-6 border border-gray-300 dark:border-gray-700"
         />
-        <div className="flex items-center justify-between flex-grow">
+        <div className="flex flex-col md:flex-row items-center justify-between flex-grow w-full">
           <div>
             <h1 className="text-3xl font-semibold mb-0 leading-snug" style={{color: "var(--foreground)"}}>
               {profile.name}
             </h1>
             <p className="text-lg italic leading-relaxed mb-0" style={{color: "var(--foreground)"}}>{profile.tagline}</p>
           </div>
-          <button onClick={() => window.open('https://www.linkedin.com/in/anugrahxyz', '_blank')} className="px-5 py-2 bg-accent text-white rounded hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 whitespace-nowrap">
+          <button onClick={() => window.open('https://www.linkedin.com/in/anugrahxyz', '_blank')} className="mt-4 md:mt-0 md:ml-4 px-5 py-2 bg-accent text-white rounded hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 whitespace-nowrap w-full md:w-auto max-w-xs">
             Let&apos;s collaborate
           </button>
         </div>
