@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb;
+  --foreground: #2c3e50;
+  --accent: #3b82f6;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -10,17 +14,54 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-card-shadow: var(--card-shadow);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #121317;
+    --foreground: #e1e1e6;
+    --accent: #3b82f6;
+    --card-bg: #1e1e2f;
+    --card-border: #323244;
+    --card-shadow: 0 1px 3px rgba(59, 130, 246, 0.3);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+:focus-visible {
+  outline-color: var(--accent);
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-radius: 3px;
+  transition: outline-color 0.3s ease;
+}
+
+a:focus-visible {
+  outline-offset: 2px;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: var(--accent);
+  border-radius: 4px;
+  transition: outline-color 0.3s ease;
 }
